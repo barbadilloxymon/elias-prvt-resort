@@ -1,0 +1,237 @@
+/* Your CSS with improvements */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: rgb(2, 2, 52);
+    --secondary-color: rgb(245, 162, 8);
+    --text-dark: #0f172a;
+    --primary: #0077b6;
+    --text-light: whitesmoke;
+    --extra-light: rgb(3, 5, 67);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+    --white: #ffffff;
+    --max-width:1200px;
+    --btn-color: rgb(26, 86, 251);
+    --header-font: "Playfair Display", serif;  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.header .logo {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.header .logo i {
+    color: var(--extra-light);
+    padding-right: .8rem;
+    margin-left: 2.5rem;
+}
+
+.form .details span {
+    color: var(--secondary-color);
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--btn-color);
+    font-size: 1.2rem;
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: .5rem 2rem;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px var(--box-shadow);
+    transition: background-color 0.3s ease;
+    margin-left: 38.5rem;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background-color: var(--btn-color);
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    padding: 30px;
+    background-color: var(--white);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+}
+
+.container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.container form {
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: var(--white);
+}
+
+.container form .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 6px 0;
+    margin-left: .6rem;
+}
+
+.container form .fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container form .input-field,
+.container form .input-address,
+.container form .input-zip,
+.container form .input-gender,
+.container form .input-img,
+.container form .input-payment,
+.container form .input-rooms {
+    width: calc(100% / 3 - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label,
+.input-address label,
+.input-zip label,
+.input-gender label,
+.input-img label,
+.input-payment label,
+.input-rooms label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.input-field input,
+.input-address input,
+.input-zip input,
+.input-gender select,
+.input-img input,
+.input-payment select,
+.input-rooms select {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    border-radius: .5rem;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.input-field input:hover,
+.input-address input:hover,
+.input-zip input:hover,
+.input-gender select:hover,
+.input-img input:hover,
+.input-payment select:hover,
+.input-rooms select:hover {
+    border-color: #000;
+}
+
+.input-field input:focus,
+.input-address input:focus,
+.input-zip input:focus,
+.input-gender select:focus,
+.input-img input:focus,
+.input-payment select:focus,
+.input-rooms select:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column; 
+        align-items: center;
+
+    }
+
+    .container h1 {
+        font-size: 1.5rem; 
+        margin-bottom: 2rem; 
+    }
+
+    .form .details.personal {
+        margin-bottom: 2rem; 
+    }
+
+    .btn {
+        margin-left: 3.5rem; 
+        margin-right: auto; 
+        margin-top: 2rem; 
+        font-size: 1.2rem; 
+    }
+
+    .back-btn {
+        margin-left: auto; 
+        margin-right: auto; 
+        font-size: 1rem; 
+    }
+
+
+    .fields {
+        width: 300%; 
+        display: flex; 
+        flex-direction: column; 
+    }
+
+    .input-field,
+    .input-address,
+    .input-gender,
+    .input-rooms {
+        width: calc(150% - 20px); 
+        margin: 10px; 
+    }
+}
